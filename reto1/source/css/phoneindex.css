@@ -252,6 +252,9 @@
 	#chart_div{
 		display: none;
 	}
+	#test{
+		padding: 0 25% !important;
+	}
 }
 @media (max-width: 1920px) and (min-width: 1280px){
 	#buttons button{
@@ -274,5 +277,16 @@
 }@media(max-height: 1080px){
 	#inner_stats img{
 		display: none;
+	}
+}
+@media (max-height: 600px) {
+	#accept_manual{
+		height: 2em !important;
+	}
+	#manual_data{
+		height: 2em !important;
+	}
+	#manual_input p{
+		margin: 0 !important;
 	}
 }
