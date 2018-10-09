@@ -52,6 +52,8 @@
                     <form id="form_manual" onsubmit="return showhide('auto_display','control_manual',this.id)">
                         <!-- AWP_In_Variable Name='"INPUT".MANU_AUTO' -->
                         <input type="hidden" name='"INPUT".MANU_AUTO' value="0">
+                        <!-- AWP_In_Variable Name='"OUTPUT".MENSAJE' -->
+                        <input type="hidden" name='"OUTPUT".MENSAJE' value="1">
                         <button id="button_manual" type="submit">MANUAL</button>
                     </form>
                 </div>
@@ -59,6 +61,8 @@
                     <form id="form_auto" onsubmit="return showhide('control_manual', 'auto_display',this.id)">
                         <!-- AWP_In_Variable Name='"INPUT".MANU_AUTO' -->
                         <input type="hidden" name='"INPUT".MANU_AUTO' value="1">
+                        <!-- AWP_In_Variable Name='"OUTPUT".MENSAJE' -->
+                        <input type="hidden" name='"OUTPUT".MENSAJE' value="1">
                         <button id="button_auto" type="submit">AUTO</button>
                     </form>
                 </div>
@@ -68,9 +72,9 @@
                     <img src="img/logo.png">
                     <div id="graph" onclick="expand_graph()">
                         <div id="close_graph" onclick="close_graph()">
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div id="cga1"></div>
+                        <div id="cga2"></div>
+                        <div id="cga3"></div>
                     </div>
                         <div id="chart_div"></div>
                     </div>
@@ -116,12 +120,16 @@
                 <div id="always_displayed" class="horizontal_float">
                     <span id="span_manual" class="div_title">INDICADORES</span>
                     <div id="inner_displayed">
-                        <input id="c_posicion" type="text" name="" disabled="true" value="0">POSICIÓN<br/><br/>
-                        <input id="c_speed" type="text" name="" disabled="true">SPEED<br/><br/>
-                        <div class="indicadores" id="ready" value="0"></div>PREPARADO<br/><br/>
-                        <div class="indicadores" id="alarm"></div>ALARMA<br/><br/>
-                        <div class="indicadores" id="svre"></div>PAR MOTOR<br/><br/>
-                        <div class="indicadores" id="busy"></div>EN MOVIMIENTO
+                        <div id="inner_displayed_inputs">
+                            POSICIÓN<input id="c_posicion" type="text" name="" disabled="true" value="0"><br/><br/>
+                            SPEED<input id="c_speed" type="text" name="" disabled="true"><br/><br/>
+                        </div>
+                        <div id="inner_displayed_indicators">
+                            <div class="indicadores" id="ready" value="0"></div>PREPARADO<br/><br/>
+                            <div class="indicadores" id="alarm"></div>ALARMA<br/><br/>
+                            <div class="indicadores" id="svre"></div>PAR MOTOR<br/><br/>
+                            <div class="indicadores" id="busy"></div>EN MOVIMIENTO
+                        </div>
                     </div>
                 </div>
             </div>
