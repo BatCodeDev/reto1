@@ -26,13 +26,15 @@ $(document).ready(function () {
 $(window).resize(function () {
     var focused = document.getElementById("manual_data");
     if(document.activeElement != focused){
-        window.location.reload();
         var h = $(window).height();
         var w = $(window).width();
         $("body").height(h);
         $("body").width(w);
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
+        if($("#type").width()===0){
+            window.location.reload();
+        }
     }
 });
 /**
@@ -341,4 +343,11 @@ function close_graph(){
  */
 function fakeClick(idBoton) {
     $("#"+idBoton).click();
+}
+
+function swap(elementSwapt, classSwap) {
+    if(elementSwapt.classList.contains(classSwap))
+        elementSwapt.classList.remove(classSwap)
+    else
+        elementSwapt.classList.add(classSwap)
 }
