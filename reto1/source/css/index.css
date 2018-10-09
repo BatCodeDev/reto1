@@ -134,11 +134,15 @@ footer{
     width: 100%;
     height: 35%;
     padding: .5em;
+    background-image: url(../img/cinta.png);
 }
 #animation_box{
+    width: 100%;
+    height: 100%;
+}
+#animation_box img{
     width: 10%;
     height: 100%;
-    background: red;
 }
 #logo{
     height: 20%;
