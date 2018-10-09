@@ -27,6 +27,7 @@ $(document).ready(function () {
 $(window).resize(function () {
     var focused = document.getElementById("manual_data");
     if(document.activeElement != focused){
+        window.location.reload();
         var h = $(window).height();
         var w = $(window).width();
         $("body").height(h);
@@ -138,7 +139,6 @@ function positionButton(idform) {
  */
 function showhide(tohide, toshow,idform){
     request2server(idform);
-    showmsg();
     var chance = $("#type").width();
     if (chance===0) {
         var element = document.getElementById("animation");
@@ -303,6 +303,9 @@ function expand_graph() {
         $("#chart_div").fadeOut();
         $("#chart_div").load(document.URL + " #chart_div");
         $("#close_graph").fadeIn();
+        swap(document.getElementById("cga1"),"cgraph1_action");
+        swap(document.getElementById("cga2"),"cgraph2_action");
+        swap(document.getElementById("cga3"),"cgraph3_action");
         document.getElementById("close_graph").classList.add("close_graph");
         setTimeout(function () {
             google.charts.load('current', {'packages':['corechart']});
@@ -322,6 +325,9 @@ function close_graph(){
     el.removeAttribute("style");
     el.classList.add("closed");
     $("#chart_div").fadeOut(1);
+    swap(document.getElementById("cga1"),"cgraph1_action");
+    swap(document.getElementById("cga2"),"cgraph2_action");
+    swap(document.getElementById("cga3"),"cgraph3_action");
     $("#close_graph").fadeOut(1);
     document.getElementById("close_graph").classList.remove("close_graph");
     setTimeout(function () {

@@ -269,8 +269,9 @@ footer{
 .indicadores{
     border: 1px solid black;
     width: 5%;
-    height: 5%;
+    height: 1em;
     float: left;
+    margin-right: 5%;
 }
 #inner_pause_responsive{
     width: 100%;
@@ -298,14 +299,15 @@ footer{
     padding: 0;
 }
 #close_graph{
-    width: 3% !important;
-    height: 6%;
+    width: 47px !important;
+    height: 40px;
     position: absolute;
     display: none;
-    background: green !important;
+    background: #00A1F1 !important;
     z-index: 1;
-    right: 5em;
+    right: 3.8em;
     transition: all .5s;
+    padding: .25em !important;
 }
 .expanded{
     transition: all .5s;
@@ -314,19 +316,36 @@ footer{
     right: 0 !important;
     top: 0 !important;
     z-index: 1;
-    padding: 5em !important;
+    padding: 4em !important;
 }
 #close_graph div{
     width: 100%;
     height: 5px;
     background: black;
-    margin-bottom: 5px;
+    margin-bottom: 20%;
     cursor: pointer;
     padding: 0;
+    transition: all .8s;
+}
+.cgraph1_action{
+    transform: translateY(13px) rotate(45deg);
+}
+.cgraph2_action{
+    transform: rotate(-45deg);
+}
+.cgraph3_action{
+    transform: translateY(-13px) rotate(-45deg);
 }
 #graph img{
     display: none;
 }
 #animation{
     margin: 2% 0;
+}
+#inner_displayed_inputs{
+     margin-bottom: 10%;
+}
+#inner_displayed_inputs input{
+    float: left;
+    margin-right: 10%;
 }
