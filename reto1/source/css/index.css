@@ -134,7 +134,7 @@ footer{
     width: 100%;
     height: 35%;
     padding: .5em;
-    background-image: url(../img/cinta.png);
+    background-image: url("../img/cinta.png");
 }
 #animation_box{
     width: 100%;
@@ -331,13 +331,13 @@ footer{
     padding: 0;
     transition: all .8s;
 }
-.cgraph1_action{
+#cga1{
     transform: translateY(13px) rotate(45deg);
 }
-.cgraph2_action{
+#cga2{
     transform: rotate(-45deg);
 }
-.cgraph3_action{
+#cga3{
     transform: translateY(-13px) rotate(-45deg);
 }
 #graph img{
