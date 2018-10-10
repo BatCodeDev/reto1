@@ -45,13 +45,14 @@ setInterval(function () {
     aplicarOutput("c_posicion", document.getElementById("c_posicionInput").value);
     positionAnimation();
     aplicarOutput("c_speed", document.getElementById("c_speedInput").value);
+    aplicarOutput("realCiclos", document.getElementById("contInput").value);
     aplicarOutputButton("ready", document.getElementById("readyInput").value);
     aplicarOutputButton("alarm", document.getElementById("alarmInput").value);
     aplicarOutputButton("svre", document.getElementById("svreInput").value);
     aplicarOutputButton("busy", document.getElementById("busyInput").value);
     if(document.getElementById("messageInput").value == 1)
         showmsg();
-},500);
+},100);
 
 /**
  * Envio de datos al servidor
@@ -303,9 +304,6 @@ function expand_graph() {
         $("#chart_div").fadeOut();
         $("#chart_div").load(document.URL + " #chart_div");
         $("#close_graph").fadeIn();
-        swap(document.getElementById("cga1"),"cgraph1_action");
-        swap(document.getElementById("cga2"),"cgraph2_action");
-        swap(document.getElementById("cga3"),"cgraph3_action");
         document.getElementById("close_graph").classList.add("close_graph");
         setTimeout(function () {
             google.charts.load('current', {'packages':['corechart']});
@@ -325,9 +323,6 @@ function close_graph(){
     el.removeAttribute("style");
     el.classList.add("closed");
     $("#chart_div").fadeOut(1);
-    swap(document.getElementById("cga1"),"cgraph1_action");
-    swap(document.getElementById("cga2"),"cgraph2_action");
-    swap(document.getElementById("cga3"),"cgraph3_action");
     $("#close_graph").fadeOut(1);
     document.getElementById("close_graph").classList.remove("close_graph");
     setTimeout(function () {
@@ -343,11 +338,4 @@ function close_graph(){
  */
 function fakeClick(idBoton) {
     $("#"+idBoton).click();
-}
-
-function swap(elementSwapt, classSwap) {
-    if(elementSwapt.classList.contains(classSwap))
-        elementSwapt.classList.remove(classSwap)
-    else
-        elementSwapt.classList.add(classSwap)
 }
