@@ -16,14 +16,18 @@ function drawChart() {
 
     var data2 = new google.visualization.DataTable();
     var hiddens = document.getElementsByClassName("dGrafico");
+    var arrayFilas=[];
 
 
     data2.addColumn('string', 'DATOS');
     data2.addColumn('number', 'VALORES');
-    for (var x = 0; x < hiddens.length; x++){
-        data2.addRows([[hiddens[x].name,parseInt(hiddens[x].value)]]);
+    for (var x = 0; x < hiddens.length; x++)
+    {
+        arrayFilas.push([hiddens[x].name,parseInt(hiddens[x].value)]);
         //data2.addRows([["hola",4]]);
     }
+    
+    data2.addRows(arrayFilas);
     //OPCIONES DE TAMAÑO DEL GRAFICO, SE PUEDEN MOVER A CSS SIN PROBLEMAS AUNQUE NO SE COMO
     // Set chart options
     var h = $("#chart_div").height();
