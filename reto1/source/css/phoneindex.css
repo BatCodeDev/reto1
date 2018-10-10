@@ -203,6 +203,9 @@
 	#ciclosFormu{
 		width: 100%;
 	}
+	footer{
+		padding: 3% 0 0 2% !important;
+	}
 }
 @media(min-width: 700px) and (max-width: 1080px){
 	#manual_data{
